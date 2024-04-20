@@ -1,0 +1,152 @@
+-para modificar el tipo de dato de una variable solo hace falta ponerle el nombre del tipo delante de esta, se puede hacer cuando creo la variable o cuando la estoy llamando en otra función
+- X [1] Estoy trayendo de la variable X el digito en la posición 1.
+- X [1:6:2] Estoy trayendo desde la posición 1 incluida a la posición 6 excluida saltando de 2 en 2.
+- X [1:6] Lo mismo de arriba pero el paso es de 1 en 1
+- X [1:] Lo mismo pero desde el digito 1 al ultimo que tenga guardado.
+- X [:6] desde el principio al digito 6 excluido
+- X [::-1] invierte el string
+- len(X) me da el largo de la variable string X
+
+MUTABILIDAD: capacidad de una variable de ser modificada solo en una parte de ella
+- str es inmutable
+- int es inmutable
+- listas son mutables
+- tuplas son inmutables
+- conjuntos son mutables
+
+LISTAS (list): datos = ["Federico", "Bilbao", 28, True]
+
+datos[0] ---> "Federico"
+datos[0:2] ---> ["Federico", "Bilbao"]
+
+Se pueden concatenar las listas (lista1 + lista2)
+
+lista = ["Federico","Bilbao", ["Brasil","Chile","EEUU","España"]]
+
+lista[-1][-1] ---> "España"
+
+lista. --> aparecen todos los metodos de las listas
+
+.append --> agregar un dato a la lista
+.pop --> elimina un dato pasandole el index de ese dato
+.count --> cuenta la cantidad de veces que aparece un dato
+.index --> me devuelve en que posición se encuentra un dato en la lista
+
+TUPLAS (tuple): igual que las listas pero son inmutables
+
+tupla = ("Federico", "Bilbao", 28)
+
+metodos de tupla (tupla.)
+
+list(tupla) --> transformar una tupla a una lista 
+tuple(lista) --> transformar una lista a una tupla
+
+CONJUNTOS (set): Colección no ordenada de objetos unicos, solo me deja cargar datos inmutables
+
+conjunto = {"Federico", "Bilbao", 28}
+
+.add --> agrega un dato al conjunto
+.update --> intenta agregar datos al conjunto y si se repite no lo agrega
+.discard --> eliminar un dato en especifico del conjunto si existe y si no existe no pasa nada
+.remove --> eliminar un dato y si no existe tira error
+.clear --> limpiar el conjunto
+.pop --> elimina un dato aleatorio del conjunto
+
+X in conjunto --> me devuelve true or false dependiendo de si x esta o no dentro del conjunto
+
+DICCIONARIO (dict) : colección no ordenada de objetos que se le colocan una clave para luego buscar el dato.
+
+diccionario = {"name":"Federico", "last_name": "Bilbao"}
+
+diccionario[name] --> me trae el dato con la clave name
+
+diccionario["age"] = 28 --> agrego un par clave valor al diccionario
+
+diccionario.update ({ "email": "fedebilbao3@gmail.com"}) --> modifico el diccionario
+
+puedo buscar si la clave existe en el diccionario, "name" in diccionario
+
+diccionario.clear --> elimina todos los datos
+
+
+METODOS:
+
+Strings
+.upper() --> todas las letras en mayuscula
+.lower() --> todas las letras en minuscula
+.capitalize() --> primer letra en mayuscula y todo el resto en minuscula
+.title() --> cada palabra su primer letra en mayuscula y todo el resto en minuscula
+.count() --> cuenta las apariciones de una letra o de una palabra
+.find() --> busca el indice de la primera posición de la palabra que busco y si no la encuentra devuelve un -1
+.rfind() --> busca el indice de la ultima posición de la palabra que busco y si no la encuentra devuelve un -1
+.split() --> me devuelve una lista con cada una de las palabras que estan separadas por espacio y si le paso un valor me devuelve todas las palabras que estan separadas por ese valor que le pase.
+.join() --> me devuelve un string y le pone a cada letra entre medio el valor que le de
+.strip() --> elimina un valor del principio y del final que se lo tengo que pasar como valor.
+.replace()--> reemplaza una letra o palabra por el valor que le pase, puedo ponerle a lo ultimo un numero que será la cantidad de veces que lo reemplace.
+
+Listas
+.extend() --> concatena listas, funciona igual que el +
+.insert() --> le paso la posición index y el item que le queremos adicionar.
+.reverse() --> invierte los datos de la lista de atras adelante
+.sort()--> los ordena de menor a mayor y si le pasamos reverse=True los ordena de mayor a menor.
+.count() --> cuenta un dato especifico en la lista
+
+Conjuntos
+.copy() --> se devuelve una copia de un conjunto en otro conjunto nuevo
+.isdisjoint() --> evalua si no tiene ningun valor compartido entre dos conjutnos, si es así el resultado es True.
+.issubset() --> si un conjunto es subconjunto del otro da como resultado True, todos los valores de un conjunto se encuentran en el otro.
+.issuperset() --> si un conjunto es un superconjunto del otro, la inversa al subconjunto.
+.union() --> unifica los valores de los conjuntos y no los duplica
+.difference() --> busca los valores que no se encuentren en el otro conjunto y me devuelve solo esos, no modifica el conjunto.
+.difference_update() --> hace lo mismo que difference pero modifica el conjunto inicial.
+.intersection() --> crea un nuevo conjunto con la union entre dos conjuntos
+.intesection_update() --> lo mismo que intersection pero modificando el conjunto inicial.
+
+Diccionarios
+.get() --> buscar un elemento pasandole la clave, si no existe devuelve un none
+.keys() --> devuelve una lista con todas las claves de un diccionario 
+.values() --> devuelve una lista de los valores del diccionario.
+.items() --> devuelve una lista con clave,valor
+
+
+OPERADORES Y EXPRESIONES
+
+True, False (bool) también puede ser 1 el True o 0 el False
+== es igualdad
+= es asignación
+!= es distinto
+< menor
+> mayor
+not True --> cambia de true a false
+or --> si una condición es true el resultado da true
+and --> si las dos condiciones son true el resultado da true
++=1 --> le suma uno a la variable
+%= --> modulo o resto de una división
+
+CONTROLADORES DE FLUJO
+
+diagrama de flujo: rombo para preguntas y rectangulos para resultados
+
+if X<2: print("es menor a 2") --> es un condicional si
+elif X<2: --> else if 
+else: --> si no se cumple ningun if y ningun elif realizá esto
+while i<n: --> un bucle condicional, siempre que se cumpla i<n se va a seguir ejecutando.
+break --> sale del bucle inmediatamente
+while i<n else --> el else a la misma altura que while, se ejecuta en el caso de que el while llegue al final y la condición de False.
+continue --> dentro de un while para que continue el while eliminando un dato en especifico dentro de un if
+pass --> es para pasar por el momento una funcion y que no me de error de sintaxis. En algun momento lo voy a usar pero no se todavia que.
+for x in lista --> es un bucle que itera una x cantidad de veces llamando cada dato de una lista en orden. Todo dato que sea iterable
+enumerate --> pasa una lista a una tupla donde cada valor de la lista la pone con su valor de la posición en la lista.
+range(0,10) --> rango de numeros, en un for puede ir desde el primer numero al ultimo.
+for else --> se va a ejecutar siempre que el for siempre que no se haya cumplido ninguno de los datos del for y haya salido cumpliendo todas las vueltas. Si sale por break no se ejecuta
+
+FUNCIONES
+X() --> llamando a la función X
+def X (y): --> definiendo una función con un dato y
+importante los retornos, por que sino no devuelve none, return.
+1:12 funciones 1
+
+
+
+
+print (f"Hola{Nombre}") --> subfijo f para poner variables
