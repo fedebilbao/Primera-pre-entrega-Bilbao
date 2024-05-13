@@ -144,9 +144,55 @@ FUNCIONES
 X() --> llamando a la función X
 def X (y): --> definiendo una función con un dato y
 importante los retornos, por que sino no devuelve none, return.
-1:12 funciones 1
+def suma(*var): al definir una variable dentro de una función con asterisco estoy diciendo que la función puede recibir n datos dentro de una tupla.
+def suma (**var): al definir así puedo pasarle un diccionario
+función recursiva: se auto ejecuta la función dentro de ella.
+
+EXCEPCIONES
+try: intenta este bloque de programación
+except: en caso que el bloque de try no funcione se corre este bloque y continua la aplicación
+(en otros idiomas es try catch)
+finally: se ejecuta siempre despues de un break, despues de un else, despues de lo que sea, por ejemplo cerrar la conexion a la base de datos
+except ValueError as e: estoy tomando el error especifico y hago un bloque solo para este tipo de error
+Exception as e(tipo de excepcion): print (e.__value__) "tipo de error"
+
+PROGRAMACION ORIENTADA A OBJETOS
+Objeto: un solo elemento
+Clase: elementos (ej perros, autos, etc.)
+Atributos: caracteristicas
+Metodos: funcionalidades
+"Drawio" para armar un diagrama de clase
+
+class Persona(): 
+    def __init__(self, nom, ape, ed):
+        self.nombre = nom
+        self.apellido = ape
+        self.edad = ed
+
+    def saldua(self) --> es una función solo para esa clase, siempre lleva el self
+
+self es la instancia del constructor de la clase
+
+crear una persona --> messi = Persona("Lionel", "Messi", 36)
+
+clases --> grupo de objetos que llevan mismos atributos y metodos
+atributos --> nombre, apellido y edad (si al atributo le pongo dos _ delante, le pongo como un seguro para no modificarlo por fuera de los metodos de la clase)
+metodos --> funciones especificas de una clase
 
 
+__str__(self): --> es un metodo especial y cuando quiero imprimir lo que retorna la clase me devuelve ese str sin llamarlo
+__len__(self): --> devuelve cuando pido el len de mi clase
+__getitem__(self, pos): --> busca el dato en la posición que le doy
+__setitem__(self, pos, value): --> es para realizar un reemplazo de un dato en una posición especifica
+__iter__(self):
+
+class Empleado (Persona) --> en la definición de la clase de un hijo debemos colocar el nombre de su padre para realizar la herencia
+super().__init__(nombre,apellido)--> esta es la forma de realizar herencias de clases
+
+import sys --> importa un paquete/modulo con diferentes funcionalidades
+sys.argv --> trae una lista con los datos que le paso como parametro en la invocación del script
+
+28:40
 
 
 print (f"Hola{Nombre}") --> subfijo f para poner variables
